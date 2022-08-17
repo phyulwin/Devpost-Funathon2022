@@ -1,0 +1,10 @@
+{% extends "style.html" %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+<!--redirect /live if start button is clicked-->
+<form method="post" action="/live">
+    <input type="submit" value="start" name="start" />
+</form>
+{% endblock %}
