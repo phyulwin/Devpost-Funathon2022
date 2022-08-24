@@ -1,4 +1,3 @@
-#import libraries
 import re, os
 from flask import Flask, render_template, request, redirect, url_for, Response
 import cv2
@@ -6,7 +5,7 @@ import numpy as np
 
 #import functions from other python files
 from cv2LiveDetection import live_detection
-#from api_queries import functions
+from api_queries import search_image, getUserLocation
 
 app = Flask(__name__)
 
@@ -24,6 +23,16 @@ def live():
         live_detection()
         #object_name = live_detection() get object name and call queries
     return render_template('load.html')
+
+#search nearby recycling centers, retrives user's location first #TODO
+@app.route('/location_search', methods=['GET', 'POST'])
+def location_search():
+    if request.method == 'GET':
+        getUserLocation()
+
+        #return new page
+        return render_template('location_search.html')
+    return render_template('location_search.html')
 
 
 

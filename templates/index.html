@@ -1,3 +1,4 @@
+<!--this is the welcome page-->
 {% extends "style.html" %}
 
 {% block head %} {% endblock %}
@@ -6,5 +7,10 @@
 <!--redirect /live if start button is clicked-->
 <form method="post" action="/live">
     <input type="submit" value="start" name="start" />
+</form>
+
+<!--redirect user to another page after getting user's location-->
+<form method="post" action="/location_search">
+    <input type="submit" value="search nearby recycling centers" name="search" />
 </form>
 {% endblock %}
