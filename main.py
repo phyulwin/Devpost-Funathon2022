@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 #import functions from other python files
-from cv2LiveDetection import live_detection
+from cv2LiveDetection import show_detected
 from api_queries import search_image, getUserLocation
 
 app = Flask(__name__)
@@ -16,12 +16,11 @@ def index():
 #start live detection if start button is clicked #TODO
 @app.route('/live', methods=['GET', 'POST'])
 def live():
+    #detect object
+    show_detected()
     if request.method == 'GET':
-        #start video capture
-        camera = cv2.VideoCapture(0)
-        #detect object
-        live_detection()
         #object_name = live_detection() get object name and call queries
+        pass
     return render_template('load.html')
 
 #search nearby recycling centers, retrives user's location first #TODO
