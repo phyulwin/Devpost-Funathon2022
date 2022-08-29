@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 #import functions from other python files
-from cv2LiveDetection import show_detected
+#from cv2LiveDetection import show_detected
 from api_queries import search_image, getUserLocation
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def index():
 @app.route('/live', methods=['GET', 'POST'])
 def live():
     #detect object
-    show_detected()
+    #show_detected()
     if request.method == 'GET':
         #object_name = live_detection() get object name and call queries
         pass
@@ -27,8 +27,11 @@ def live():
 @app.route('/location_search', methods=['GET', 'POST'])
 def location_search():
     if request.method == 'GET':
-        getUserLocation()
-
+        '''
+        #call functions from api_queries.py and update dictionary recycling places with information
+        #includes at most 10 recycling places
+        global recycling_places 
+        '''
         #return new page
         return render_template('location_search.html')
     return render_template('location_search.html')
@@ -40,4 +43,6 @@ def location_search():
 
 #run the app
 if __name__ == "__main__":
+    app.debug = True
     app.run()
+    app.run(debug = True) #to be removed after done with all coding above

@@ -68,7 +68,4 @@ def show_detected():
     cv2.waitKey(0)
 
 
-#show_detected()
-
-
-
+show_detected()
