@@ -6,8 +6,6 @@ from cvlib.object_detection import draw_bbox
 #pip install opencv-python tensorflow
 #pip install cvlib
 
-img = ""
-
 def livedetection():
 
     # open webcam
@@ -22,8 +20,6 @@ def livedetection():
     while webcam.isOpened():
 
         # read frame from webcam 
-    # read frame from webcam 
-        # read frame from webcam 
         status, frame = webcam.read()
 
         if not status:
@@ -36,6 +32,7 @@ def livedetection():
 
         print(label)
 
+        # removes any possible detection of a person
         if 'person' in label:
             bbox.pop(label.index('person'))
             conf.pop(label.index('person'))
@@ -59,8 +56,10 @@ def livedetection():
             # release resources
             webcam.release()
             cv2.destroyAllWindows()
-            return label[0], out
+            return label[0], out # returns string of object, img of the selected frame
         
+    # runs the detection, when finds the labeled object desired press q to lock it
+    # then it shows another img of what is locked
 
 def show_detected():
     thing, img = livedetection()
@@ -68,7 +67,14 @@ def show_detected():
     cv2.waitKey(0)
 
 
-show_detected()
+#show_detected() #test run
+
+# some issues:
+#     - the detection only expects exactly one item, if there are multiple or none then it goes out of bounds
+#         - might have to have an exception error + visual notification thrown for that
+#     - glitchy and slightly inaccurate
+#     - not exactly sure how i want the method to work but it basically functions 
+
 
 
 
