@@ -53,6 +53,7 @@ def suggest_locations(latitude,longitude):
   #print(response.text)
   response = response.json()
 
+  #python list for predictions
   predictions = response['response']['predictions']
   for items in predictions:
     #main_text - The main part of the description (the bold part as seen on Google Maps site autocomplete).

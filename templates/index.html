@@ -4,14 +4,18 @@
 {% block head %} {% endblock %}
 
 {% block body %}
+<h2 class="logo">RECYCLABLE?</h2>
 <!--redirect /live if start button is clicked-->
 <form method="post" action="/live">
-    <input type="submit" value="start" name="start" />
+    <input type="submit" value="start" class="button" name="start" />
 </form>
 
 <!--redirect user to another page after getting user's location-->
-<p>Not able to recycle by yourself? Don't worry, we got you covered! Send it to the nearest recycling center.</p>
+<p>Not able to recycle by yourself?</p>
+<p>Don't worry, we got you covered!</p> 
+<p>Send it to the nearest recycling center.</p>
+
 <form method="post" action="/location_search">
-    <input type="submit" value="search nearby recycling centers" name="search" />
+    <input type="submit" value="search nearby recycling centers" class="button" name="search" />
 </form>
 {% endblock %}
