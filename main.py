@@ -2,25 +2,39 @@ import re, os
 from flask import Flask, render_template, request, redirect, url_for, Response
 import cv2
 import numpy as np
+from cv2LiveDetection import livedetection, detection_result
 
 #import functions from other python files
-#from cv2LiveDetection import show_detected
 from api_queries import search_image, getUserLocation
 
 app = Flask(__name__)
+
+@app.route('/video_feed') #just a route to convert cv2 video to web byte stream (idk how else to do it)
+def video_feed():
+    return Response(livedetection(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 #start live detection if start button is clicked #TODO
-@app.route('/live', methods=['GET', 'POST'])
+@app.route('/live', methods=['GET', 'POST']) #a tab to display converted bytes video
 def live():
-    #detect object
-    #show_detected()
+
+    # #detect object
+    # livedetection()
+    # if request.method == 'GET':
+    #     #object_name = live_detection() get object name and call queries
+    #     pass
+    return render_template('live.html')
+
+@app.route('/load', methods=['GET', 'POST']) #the screen with the final img and label (supposedly)
+def load():
+
     if request.method == 'GET':
-        #object_name = live_detection() get object name and call queries
-        pass
+        result_img, object_name = detection_result() 
+        print('ppp' + object_name)
+
     return render_template('load.html')
 
 #search nearby recycling centers, retrives user's location first #TODO
