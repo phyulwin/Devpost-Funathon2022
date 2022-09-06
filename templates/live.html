@@ -1,5 +1,11 @@
+{% extends "style.html" %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
 <img src="{{ url_for('video_feed') }}" height="80%" />
 
 <form method="post" action="/load">
   <input type="submit" value="start" class="button" name="start" />
 </form>
+{% endblock %}
