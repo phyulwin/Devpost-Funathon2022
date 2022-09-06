@@ -17,7 +17,8 @@ def video_feed():
 def index():
     return render_template('index.html')
 
-#start live detection if start button is clicked #TODO
+#start live detection if start button is clicked
+object_name = 'object_name'
 @app.route('/live', methods=['GET', 'POST']) #a tab to display converted bytes video
 def live():
 
@@ -30,24 +31,41 @@ def live():
 
 @app.route('/load', methods=['GET', 'POST']) #the screen with the final img and label (supposedly)
 def load():
-
     if request.method == 'GET':
         result_img, object_name = detection_result() 
         print('ppp' + object_name)
 
-    return render_template('load.html')
+    #use Google Image Search API
+    search_image(object_name)
+    #return render_template('load.html')
 
-#search nearby recycling centers, retrives user's location first #TODO
+#search nearby recycling centers, retrives user's location first
+'''
+#call functions from api_queries.py and update dictionary recycling places with information
+#includes at most 10 recycling places
+global recycling_places 
+'''
 @app.route('/location_search', methods=['GET', 'POST'])
 def location_search():
-    if request.method == 'GET':
-        '''
-        #call functions from api_queries.py and update dictionary recycling places with information
-        #includes at most 10 recycling places
-        global recycling_places 
-        '''
+    if request.method == 'POST':
+        #python dictionary for locations #prototype
+        location_examples = {"Ranch Town Recycling Center Inc":{"website":"https://www.ranchtownrecycling.com/",
+                                                            "address":"775 Lincoln Ave, San Jose, CA 95126",
+                                                            "distance":"6.1 miles"},
+                            "Story Road Recycling LLC":{"website":"http://storyroadrecycling.com/",
+                                                            "address":"1303 Story Rd, San Jose, CA 95122",
+                                                            "distance":"10.8 miles"},
+                            "ASC Recycling":{"website":"https://www.ascrecycling.com/",
+                                                            "address":"1970 Monterey Rd, San Jose, CA 95112",
+                                                            "distance":"10.3 miles"},
+                            "Schnitzer":{"website":"https://www.schnitzersteel.com/locations/144",
+                                                            "address":"11665 Berryessa Rd, San Jose, CA 95133",
+                                                            "distance":"8.3 miles"},
+                            "Jado Recycling":{"website":"http://www.jadorecycling.com/ ",
+                                                            "address":"4650 Meridian Ave, San Jose, CA 95124",
+                                                            "distance":"9.5 miles"}}
         #return new page
-        return render_template('location_search.html')
+        return render_template('location_search.html', location_examples=location_examples)
     return render_template('location_search.html')
 
 
