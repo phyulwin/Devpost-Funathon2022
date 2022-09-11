@@ -4,22 +4,22 @@
 {% block head %} {% endblock %}
 
 {% block body %}
-    {% for each_image in image_suggestions.items() %}
-    <div>
-        <p><a href='{{ each_image["source"]["page"] }}'>{{each_image["source"]["title"]}}</a></p>
-        <!--show image-->
+    <div style="text-align:left">
+        <form method="get" action="/live">
+            <input style="top: 20px; left: 20px;"
+                type="submit" value="Back" class="button" name="back_button" />
+        </form>
+        <br>
+        {% for image in image_suggestions %}
+        <div>
+            <h2><a style="text-decoration:none;" href='{{ image["source"]["page"] }}'>{{ image['source']['name'] }}</a></h2>
+            <p>{{ image['source']['title'] }}</p>
+            <a href='{{ image["thumbnail"]["url"] }}'>
+                <img src='{{ image["thumbnail"]["url"] }}' alt="image">
+            </a>
+        </div> 
+        <br>
+        {% endfor %}
+        <button class="button">Load More</button>
     </div>
-    {% endfor %}
 {% endblock %}
-
-<!--
-
-<script>
-  for each_image in image_suggestions:
-    #source article about the image
-    article_name = each_image['source']['title']
-    article_link = each_image['source']['page']
-    #image url
-    image_url = each_image['image']['url']
-</script>
--->

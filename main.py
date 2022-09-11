@@ -21,15 +21,21 @@ def index():
 #object_name = 'object_name'
 @app.route('/live', methods=['GET', 'POST']) #a tab to display converted bytes video
 def live():
-    if request.method == 'POST':
-        #fetch results from live detection
-        object = detection_result()
-        #return results in dictionary passed to load.html
-        image_suggestions = search_image(object)
-        print(image_suggestions)
-        #return render_template('load.html', image_suggestions=image_suggestions)
     return render_template('live.html')
-    #camera works
+
+@app.route('/load', methods=['GET', 'POST'])
+def load_results():
+    #fetch results from live detection
+    object = detection_result()
+    #return results in dictionary passed to load.html
+    image_suggestions = search_image(object)
+    for each_image in image_suggestions:
+        #source article about the image
+        article_name = each_image['source']['title']
+        article_link = each_image['source']['page']
+        #image url
+        image_url = each_image['image']['url']
+    return render_template('load.html', image_suggestions=image_suggestions)
 
 #search nearby recycling centers, retrives user's location first
 '''
@@ -63,5 +69,5 @@ def location_search():
 #run the app
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    app.run() #app running on http://127.0.0.1:5000/
     app.run(debug = True) #to be removed after done with all coding above
