@@ -11,13 +11,20 @@
         </form>
         <br>
         {% for image in image_suggestions %}
-        <div>
-            <h2><a style="text-decoration:none;" href='{{ image["source"]["page"] }}'>{{ image['source']['name'] }}</a></h2>
-            <p>{{ image['source']['title'] }}</p>
-            <a href='{{ image["thumbnail"]["url"] }}'>
-                <img class="image" src='{{ image["thumbnail"]["url"] }}' alt="image">
-            </a>
-        </div> 
+            <div class="card">
+                <!-- Image -->
+                <div class="card__cover">
+                    <a href='{{ image["thumbnail"]["url"] }}'>
+                        <img class="image" src='{{ image["thumbnail"]["url"] }}' alt="image">
+                    </a>
+                </div>
+                <!-- Title and Content -->
+                <div class="card__content">
+                    <h2><a style="text-decoration:none;" href='{{ image["source"]["page"] }}'>{{ image['source']['name'] }}</a></h2>
+                    <p>{{ image['source']['title'] }}</p>
+                </div>
+                <a style="text-decoration:none; color: #FFE45E;" href='{{ image["source"]["page"] }}'>...read more</a>
+            </div>
         <br>
         {% endfor %}
     </div>

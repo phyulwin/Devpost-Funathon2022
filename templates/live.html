@@ -1,11 +1,20 @@
 {% extends "style.html" %}
 
-{% block head %} {% endblock %}
+{% block head %} 
+  <!--Back button to redirect back to home page (index.html)-->
+  <form method="get" action="/">
+    <input style="position: fixed; top: 20px; left: 20px;"
+        type="submit" value="Back" class="button" name="back_button" />
+  </form>
+{% endblock %}
 
 {% block body %}
-<img src="{{ url_for('video_feed') }}" height="80%" />
+  <img src="{{ url_for('video_feed') }}" height="80%" />
 
-<form method="post" action="/load">
-  <input type="submit" value="Recycle!" class="button" name="start" />
-</form>
+  <form method="post" action="/load">
+    <input type="submit" value="Recycle!" class="button" name="start" />
+  </form>
+
+  <br>
+  <h3>This year, you have recycled 40 items and scanned 42 times. Way to go!</h3>
 {% endblock %}

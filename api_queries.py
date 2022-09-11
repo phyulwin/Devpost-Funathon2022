@@ -28,6 +28,7 @@ def search_image(detected_obj):
   return image_suggestions
   
 '''
+Google Maps Autocomplete Plus API
 https://rapidapi.com/letscrape-6bRBa3QguO5/api/google-maps-autocomplete-plus/
 
 the input parameters are user's latitude and longitude

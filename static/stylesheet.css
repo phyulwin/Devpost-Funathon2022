@@ -2,7 +2,7 @@
 body {
     background-color: #5AA9E6;
     margin: auto;
-    padding: 100px;
+    padding: 80px;
 
     font-family: 'Nova Mono', monospace;
     font-size: 25px;
@@ -35,3 +35,23 @@ body {
 .image {
     border: 5px solid #FFE45E;
   }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 20px solid white;
+    border-radius: 25px;
+    color: black;
+    padding: 10px;
+}
+
+.card__cover {
+    height: 100%;
+    width: 100%;
+}
+
+.card__content {
+    /* Take available height */
+    flex: 1;
+}
