@@ -4,7 +4,7 @@
 {% block head %} {% endblock %}
 
 {% block body %}
-    <div style="text-align:left">
+    <div style="text-align:left;">
         <form method="get" action="/live">
             <input style="top: 20px; left: 20px;"
                 type="submit" value="Back" class="button" name="back_button" />
@@ -15,11 +15,11 @@
             <h2><a style="text-decoration:none;" href='{{ image["source"]["page"] }}'>{{ image['source']['name'] }}</a></h2>
             <p>{{ image['source']['title'] }}</p>
             <a href='{{ image["thumbnail"]["url"] }}'>
-                <img src='{{ image["thumbnail"]["url"] }}' alt="image">
+                <img class="image" src='{{ image["thumbnail"]["url"] }}' alt="image">
             </a>
         </div> 
         <br>
         {% endfor %}
-        <button class="button">Load More</button>
     </div>
+    <button class="button">Load More</button>
 {% endblock %}

@@ -31,3 +31,7 @@ body {
     border-style: solid;
     border-color: hsl(0, 100%, 50%); /* red */
 }
+
+.image {
+    border: 5px solid #FFE45E;
+  }
