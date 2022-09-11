@@ -1,10 +1,10 @@
 <!--this is the welcome page-->
 {% extends "style.html" %}
 
-{% block head %} {% endblock %}
+{% block head %} <p padding="0px" style="text-decoration: underline; text-align: right;">Log Out</p> {% endblock %}
 
 {% block body %}
-<h2 class="logo">RECYCLABLE?</h2>
+<h2 class="card" style="font-size: 70px; padding: 5px;">RECYCLABLE?</h2>
 <!--redirect /live if start button is clicked-->
 <form method="post" action="/live">
     <input type="submit" value="start" class="button" name="start" />

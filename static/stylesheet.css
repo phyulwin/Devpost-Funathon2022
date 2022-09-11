@@ -1,13 +1,13 @@
 /* https://purecss.io/layouts/ - layout git source: https://github.com/pure-css/pure/tree/master/site/static/layouts/blog */
 body {
-    background-color: #5AA9E6;
+    background-color: white;
     margin: auto;
-    padding: 80px;
+    padding: 30px;
 
     font-family: 'Nova Mono', monospace;
     font-size: 25px;
 
-    color: #FFE45E; /*text color - either white or black or yellow*/
+    color: #22577A; /*text color - either white or black or yellow*/
     text-align: center;
 
 }
@@ -16,8 +16,8 @@ body {
     border-radius: 25px;
     padding: 10px;
     transition: ease-out 0.5s;
-    background-color: white;
-    box-shadow: inset 0 0 0 0 lightblue;
+    background-color: #38A3A5;
+    box-shadow: inset 0 0 0 0 #22577A;
 }
 
 .button:hover{
@@ -29,20 +29,21 @@ body {
 .logo {
     font-size: 70px;
     border-style: solid;
-    border-color: hsl(0, 100%, 50%); /* red */
+    border-color: #22577A; /* red */
 }
 
 .image {
-    border: 5px solid #FFE45E;
+    border: 5px solid #22577A;
   }
 
 .card {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: 20px solid white;
+    background-color: #C7F9CC;
+    background-blend-mode: overlay;
+    border: 20px solid #C7F9CC;
     border-radius: 25px;
-    color: black;
+    color: #22577A;
     padding: 10px;
 }
 

@@ -1,7 +1,7 @@
 <!--open camera frame and query results at the same time-->
 {% extends "style.html" %}
 
-{% block head %} {% endblock %}
+{% block head %} <p padding="0px" style="text-decoration: underline; text-align: right;">Saved Articles</p> {% endblock %}
 
 {% block body %}
     <div style="text-align:left;">
@@ -9,6 +9,7 @@
             <input style="top: 20px; left: 20px;"
                 type="submit" value="Back" class="button" name="back_button" />
         </form>
+        <p>Loading results on how to recycle {{ object }}...</p>
         <br>
         {% for image in image_suggestions %}
             <div class="card">
@@ -20,10 +21,17 @@
                 </div>
                 <!-- Title and Content -->
                 <div class="card__content">
-                    <h2><a style="text-decoration:none;" href='{{ image["source"]["page"] }}'>{{ image['source']['name'] }}</a></h2>
-                    <p>{{ image['source']['title'] }}</p>
+                    <h2><a style="text-decoration:none;" href='{{ image["source"]["page"] }}'>{{ image['source']['title'] }}</a></h2>
+                    <p>{{ image['source']['name'] }}</p>
                 </div>
-                <a style="text-decoration:none; color: #FFE45E;" href='{{ image["source"]["page"] }}'>...read more</a>
+                <a style="text-decoration:none; color: #22577A;" href='{{ image["source"]["page"] }}'>...read article</a>
+                <br>
+                <style>
+                    material-icons:hover {
+                      color: red;
+                    }
+                </style>
+                <p>save for later <i class="material-icons" style="font-size:30px; color:white;">star</i></p>
             </div>
         <br>
         {% endfor %}

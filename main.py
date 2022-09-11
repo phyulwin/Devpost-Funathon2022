@@ -28,14 +28,15 @@ def load_results():
     #fetch results from live detection
     object = detection_result()
     #return results in dictionary passed to load.html
-    image_suggestions = search_image(object)
+    object_results = "how to recycle" + object
+    image_suggestions = search_image(object_results)
     for each_image in image_suggestions:
         #source article about the image
         article_name = each_image['source']['title']
         article_link = each_image['source']['page']
         #image url
         image_url = each_image['image']['url']
-    return render_template('load.html', image_suggestions=image_suggestions)
+    return render_template('load.html', image_suggestions=image_suggestions, object=object)
 
 #search nearby recycling centers, retrives user's location first
 '''
