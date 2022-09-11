@@ -4,5 +4,22 @@
 {% block head %} {% endblock %}
 
 {% block body %}
-
+    {% for each_image in image_suggestions.items() %}
+    <div>
+        <p><a href='{{ each_image["source"]["page"] }}'>{{each_image["source"]["title"]}}</a></p>
+        <!--show image-->
+    </div>
+    {% endfor %}
 {% endblock %}
+
+<!--
+
+<script>
+  for each_image in image_suggestions:
+    #source article about the image
+    article_name = each_image['source']['title']
+    article_link = each_image['source']['page']
+    #image url
+    image_url = each_image['image']['url']
+</script>
+-->

@@ -18,26 +18,18 @@ def index():
     return render_template('index.html')
 
 #start live detection if start button is clicked
-object_name = 'object_name'
+#object_name = 'object_name'
 @app.route('/live', methods=['GET', 'POST']) #a tab to display converted bytes video
 def live():
-
-    # #detect object
-    # livedetection()
-    # if request.method == 'GET':
-    #     #object_name = live_detection() get object name and call queries
-    #     pass
+    if request.method == 'POST':
+        #fetch results from live detection
+        object = detection_result()
+        #return results in dictionary passed to load.html
+        image_suggestions = search_image(object)
+        print(image_suggestions)
+        #return render_template('load.html', image_suggestions=image_suggestions)
     return render_template('live.html')
-
-@app.route('/load', methods=['GET', 'POST']) #the screen with the final img and label (supposedly)
-def load():
-    if request.method == 'GET':
-        result_img, object_name = detection_result() 
-        print('ppp' + object_name)
-
-    #use Google Image Search API
-    search_image(object_name)
-    #return render_template('load.html')
+    #camera works
 
 #search nearby recycling centers, retrives user's location first
 '''
@@ -67,11 +59,6 @@ def location_search():
         #return new page
         return render_template('location_search.html', location_examples=location_examples)
     return render_template('location_search.html')
-
-
-
-
-
 
 #run the app
 if __name__ == "__main__":

@@ -25,15 +25,8 @@ def search_image(detected_obj):
 
   #list of images found for the given search 
   image_suggestions = response['response']['images']
-  for each_image in image_suggestions:
-    #source article about the image
-    article_name = each_image['source']['title']
-    article_link = each_image['source']['page']
-    #image url
-    image_url = each_image['image']['url']
-    
-    #testing image return -> print(image_url)
-
+  return image_suggestions
+  
 '''
 https://rapidapi.com/letscrape-6bRBa3QguO5/api/google-maps-autocomplete-plus/
 
