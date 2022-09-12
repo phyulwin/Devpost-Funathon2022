@@ -1,58 +1,79 @@
 /* https://purecss.io/layouts/ - layout git source: https://github.com/pure-css/pure/tree/master/site/static/layouts/blog */
 body {
-    background-color: #a6e7ff;
-    margin: auto;
-    padding: 30px;
+  background-color: #a6e7ff;
+  margin: auto;
+  padding: 30px;
 
-    font-family: 'Nova Mono', monospace;
-    font-size: 25px;
+  font-family: "Nova Mono", monospace;
+  font-size: 25px;
 
-    color: #22577A; /*text color - either white or black or yellow*/
-    text-align: center;
-
+  color: #22577a; /*text color - either white or black or yellow*/
+  text-align: center;
 }
 
 .button {
-    border-radius: 25px;
-    padding: 10px;
-    transition: ease-out 0.5s;
-    background-color: #38A3A5;
-    box-shadow: inset 0 0 0 0 #22577A;
+  border-radius: 25px;
+  padding: 10px;
+  transition: ease-out 0.5s;
+  background-color: #38a3a5;
+  box-shadow: inset 0 0 0 0 #22577a;
 }
 
-.button:hover{
-    box-shadow: inset 500px 0 0 0 lightblue;
-    cursor: pointer;
-    color: black;
+.button:hover {
+  box-shadow: inset 500px 0 0 0 lightblue;
+  cursor: pointer;
+  color: black;
 }
 
 .logo {
-    font-size: 70px;
-    border-style: solid;
-    border-color: #22577A; /* red */
+  font-size: 70px;
+  border-style: solid;
+  border-color: #22577a; /* red */
 }
 
 .image {
-    border: 5px solid #22577A;
-  }
+  border: 5px solid #22577a;
+}
 
 .card {
-    display: flex;
-    flex-direction: column;
-    background-color: #C7F9CC;
-    background-blend-mode: overlay;
-    border: 20px solid #C7F9CC;
-    border-radius: 25px;
-    color: #22577A;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #c7f9cc;
+  background-blend-mode: overlay;
+  border: 20px solid #c7f9cc;
+  border-radius: 25px;
+  color: #22577a;
+  padding: 10px;
+}
+
+.spacer {
+  width: 45px;
+}
+
+h2.card {
+  flex-direction: row;
+  justify-content: center;
 }
 
 .card__cover {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .card__content {
-    /* Take available height */
-    flex: 1;
+  /* Take available height */
+  flex: 1;
+}
+
+.input_item {
+  margin-top: 20px;
+}
+
+form {
+  display: block;
+  margin-top: 1em;
+}
+
+#video {
+  border-radius: 15px;
 }

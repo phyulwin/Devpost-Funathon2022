@@ -66,7 +66,7 @@ def detection_result():
     #there has to be a better way but i made global variables of the info 
     # i wanted to keep from the previous method, trying to save them like a snapshot
     # but i dont think it works unless i set up a class or smt
-    obj_name = 'plastic bottle'
+    obj_name = 'cup'
     #return img, obj_name
     return obj_name
     #return label[0], out # returns string of object, img of the selected frame
