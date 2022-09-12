@@ -72,7 +72,6 @@ def detection_result():
     #return label[0], out # returns string of object, img of the selected frame
         
     
-    
 # some issues:
 #     - the detection only expects exactly one item, if there are multiple or none then it goes out of bounds
 #         - might have to have an exception error + visual notification thrown for that

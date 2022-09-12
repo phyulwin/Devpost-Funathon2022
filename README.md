@@ -1,7 +1,7 @@
 # Devpost-Funathon2022 _ Project **Recyclable**
 
 ## Try it Out 
-Clone [project repository](https://github.com/phyulwin/Devpost-Funathon2022) locally and open the project folder in your IDE. Install required Python modules and run `main.py` in your IDE. Open your browser and access the development server at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
+Clone [project repository](https://github.com/phyulwin/Devpost-Funathon2022) locally and open the project folder in your IDE. Install required Python modules and run `main.py`. Open your browser and access the development server at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
 # Project Story
 ### about the project
@@ -13,7 +13,7 @@ According to the World Bank, an average of 2.01 billion tons of waste is produce
 The Object Recyclable is a project that aims to help people recycle their waste by detecting objects in a web camera image and giving information about how to recycle it. Users will hold the object up for a scan, where the website will then load various tabs of instructions on the side. This includes specific statistics on the object's waste impact on the environment, sectioned articles that explain ways to possibly reuse the object, and a map to show recycling sites. Users will be able to use the sorted data to find the best way for them to recycle.
 
 ## How we built it
-The website was developed using Python, OpenCV, and the Earth911 API. It was designed using the Flask framework. ....
+The Recycle? website is developed using Python with Flask framework, OpenCV for web camera function, and APIs discovered at [RapidAPI](https://rapidapi.com/hub).
 
 ## Challenges we ran into
 Initially, during our app development process, we couldn't configure IP Location API and Google Maps Autocomplete Plus API to retrieve the user's location so that we could suggest nearby recycling centers. We concluded that the case might be due to user's IP address being restricted from access for privacy concerns. Hence, we hard-coded the feature without utilizing the APIs for the app prototype. As included in `api_queries.py`, we also learned the idea of building that feature using APIs. 

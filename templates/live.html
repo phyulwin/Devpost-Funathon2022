@@ -1,5 +1,4 @@
 {% extends "style.html" %}
-
 {% block head %} 
   <p padding="0px" style="text-decoration: underline; text-align: right;">Log Out</p> 
   <!--Back button to redirect back to home page (index.html)-->
@@ -14,12 +13,9 @@
   <!--put the video in this space-->
   <img id="video" src="{{ url_for('video_feed') }}" height="80%" />
 
-
   <form method="post" action="/load">
     <input type="submit" value="Recycle!" class="button" name="start" />
   </form>
-
-
 
   <!--or search results manually-->
   <form method="post" action="/item_manual_search" id="manual">
