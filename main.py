@@ -28,7 +28,7 @@ def load_results():
     #fetch results from live detection
     object = detection_result()
     #return results in dictionary passed to load.html
-    object_results = "how to recycle" + object
+    object_results = "how to recycle" + str(object)
     image_suggestions = search_image(object_results)
     for each_image in image_suggestions:
         #source article about the image
@@ -36,6 +36,14 @@ def load_results():
         article_link = each_image['source']['page']
         #image url
         image_url = each_image['image']['url']
+    return render_template('load.html', image_suggestions=image_suggestions, object=object)
+
+@app.route('/item_manual_search', methods=['GET', 'POST'])
+def manual_search():
+    #return results in dictionary passed to load.html
+    object = request.form.get("input_item")
+    object_results = "how to recycle" + str(object)
+    image_suggestions = search_image(object_results)
     return render_template('load.html', image_suggestions=image_suggestions, object=object)
 
 #search nearby recycling centers, retrives user's location first

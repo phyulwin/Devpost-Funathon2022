@@ -10,12 +10,18 @@
 {% endblock %}
 
 {% block body %}
-  <img src="{{ url_for('video_feed') }}" height="80%" />
-
   <form method="post" action="/load">
     <input type="submit" value="Recycle!" class="button" name="start" />
   </form>
 
-  <br>
-  <h3>This year, you have recycled 40 items and scanned 42 times. Way to go!</h3>
+  <h3>This year, you have scanned 42 times. Way to go!</h3>
+
+  <!--put the video in this space-->
+  <img src="{{ url_for('video_feed') }}" height="80%" />
+
+  <!--or search results manually-->
+  <form method="post" action="/item_manual_search">
+    <input type="text" id="input_item" name="input_item" placeholder="Search Manually">
+    <input type="submit" value="Enter" class="button" name="enter_button" />
+  </form>
 {% endblock %}
