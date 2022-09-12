@@ -8,6 +8,7 @@ from cv2LiveDetection import livedetection, detection_result
 from api_queries import search_image, getUserLocation
 
 app = Flask(__name__)
+times_scanned = 0 #this is a global variable for number of times scanned
 
 @app.route('/video_feed') #just a route to convert cv2 video to web byte stream (idk how else to do it)
 def video_feed():
@@ -21,7 +22,7 @@ def index():
 #object_name = 'object_name'
 @app.route('/live', methods=['GET', 'POST']) #a tab to display converted bytes video
 def live():
-    return render_template('live.html')
+    return render_template('live.html', times_scanned=times_scanned)
 
 @app.route('/load', methods=['GET', 'POST'])
 def load_results():

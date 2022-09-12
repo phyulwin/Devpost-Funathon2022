@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-  <h3>This year, you have scanned 42 times. Way to go!</h3>
+  <h3>This year, you have scanned {{ times_scanned }} times. Way to go!</h3>
   <!--put the video in this space-->
   <img id="video" src="{{ url_for('video_feed') }}" height="80%" />
 
