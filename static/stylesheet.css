@@ -13,14 +13,14 @@ body {
 
 .button {
   border-radius: 25px;
-  padding: 10px;
+  padding: 12px;
   transition: ease-out 0.5s;
-  background-color: #38a3a5;
-  box-shadow: inset 0 0 0 0 #22577a;
+  background-color: #45c5f3;
+  box-shadow: inset 0 0 0 0 #2497e4;
 }
 
 .button:hover {
-  box-shadow: inset 500px 0 0 0 lightblue;
+  box-shadow: inset 500px 0 0 0 rgb(82, 255, 241);
   cursor: pointer;
   color: black;
 }
@@ -71,7 +71,7 @@ h2.card {
 
 form {
   display: block;
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 #video {
@@ -86,5 +86,10 @@ form {
  width: 100%;
  height: 100%;
  z-index: 9999;
- background: url('../static/Preloader_2.gif') 50% 50% no-repeat white;
+ background: url('../static/re.gif') 50% 50% no-repeat white;
+}
+
+#gif {
+  height: 250px;
+  width: 330px;
 }
