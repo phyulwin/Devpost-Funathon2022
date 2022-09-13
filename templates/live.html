@@ -1,6 +1,5 @@
 {% extends "style.html" %}
 {% block head %} 
-
 <script>
   setTimeout(() => {
   const box = document.getElementById('loader');
@@ -14,6 +13,7 @@
 
 </script>
 
+  <!--include working log out feature for future development-->
   <p padding="0px" style="text-decoration: underline; text-align: right;">Log Out</p> 
   <!--Back button to redirect back to home page (index.html)-->
   <form method="get" action="/">
@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block body %}
-  
+  <!--heading-->
   <h3>This year, you have scanned {{ times_scanned }} times. Way to go!</h3>
   <div id="loader"></div>
   <!--put the video in this space-->

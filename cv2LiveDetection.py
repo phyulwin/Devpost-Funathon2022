@@ -3,6 +3,7 @@ import cv2
 import cvlib as cv
 from cvlib.object_detection import draw_bbox
 
+# ! Install libraries before running the application
 #pip install opencv-python tensorflow
 #pip install cvlib
 
@@ -68,7 +69,6 @@ def detection_result():
     return obj_name
     #return label[0], out # returns string of object, img of the selected frame
         
-    
 # some issues:
 #     - the detection only expects exactly one item, if there are multiple or none then it goes out of bounds
 #         - might have to have an exception error + visual notification thrown for that

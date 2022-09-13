@@ -4,7 +4,7 @@ import re,os
 import requests
 import socket
 
-#call for api
+#call for api - getUserLocation() and suggest_locations() functions are not used in this demo
 '''
 Google Image Search API
 https://rapidapi.com/Glavier/api/google-image-search1/
