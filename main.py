@@ -22,6 +22,7 @@ def index():
 #object_name = 'object_name'
 @app.route('/live', methods=['GET', 'POST']) #a tab to display converted bytes video
 def live():
+    times_scanned = 8 #for desmonstration
     return render_template('live.html', times_scanned=times_scanned)
 
 @app.route('/load', methods=['GET', 'POST'])
