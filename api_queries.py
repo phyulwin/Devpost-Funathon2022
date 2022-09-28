@@ -17,7 +17,7 @@ def search_image(detected_obj):
   querystring = {"q":detected_obj}
   #API KEY from rapidapi.com; to be hidden if the code is shared to github public
   headers = {
-  	"X-RapidAPI-Key": "a30b37ef15mshb61f4b1012a4f18p110da0jsn0b7954f3ca94",
+  	"X-RapidAPI-Key": "",
   	"X-RapidAPI-Host": "google-image-search1.p.rapidapi.com"
   }
   response = requests.request("GET", url, headers=headers, params=querystring)
@@ -40,7 +40,7 @@ def suggest_locations(latitude,longitude):
   querystring = {"query":"shop","limit":"20","region":"us","language":"en","coordinates":coordinates}
   #include headers
   headers = {
-    "X-RapidAPI-Key": "a30b37ef15mshb61f4b1012a4f18p110da0jsn0b7954f3ca94",
+    "X-RapidAPI-Key": "",
     "X-RapidAPI-Host": "google-maps-autocomplete-plus.p.rapidapi.com"
   }
   response = requests.request("GET", API_url, headers=headers, params=querystring)
@@ -90,7 +90,7 @@ def getUserLocation():
   #include API key in headers
   headers = {
   	"content-type": "application/x-www-form-urlencoded",
-  	"X-RapidAPI-Key": "a30b37ef15mshb61f4b1012a4f18p110da0jsn0b7954f3ca94",
+  	"X-RapidAPI-Key": "",
   	"X-RapidAPI-Host": "ip-location5.p.rapidapi.com"
   }
   response = requests.request("POST", url, data=payload, headers=headers)
